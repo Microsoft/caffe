@@ -50,9 +50,6 @@
     <PreBuildEvent>
       <Command>"$(ScriptsDir)\ProtoCompile.cmd" "$(SolutionDir)" "$(ProtocDir)"</Command>
     </PreBuildEvent>
-    <PostBuildEvent>
-      <Command>"$(ScriptsDir)\BinplaceCudaDependencies.cmd" "$(CudaToolkitBinDir)" "$(CuDnnPath)" $(CpuOnlyBuild) $(UseCuDNN) "$(OutDir)"</Command>
-    </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>$(CudaArchitecture)</CodeGeneration>
@@ -74,9 +71,6 @@
     <PreBuildEvent>
       <Command>"$(ScriptsDir)\ProtoCompile.cmd" "$(SolutionDir)" "$(ProtocDir)"</Command>
     </PreBuildEvent>
-    <PostBuildEvent>
-      <Command>"$(ScriptsDir)\BinplaceCudaDependencies.cmd" "$(CudaToolkitBinDir)" "$(CuDnnPath)" $(CpuOnlyBuild) $(UseCuDNN) "$(OutDir)"</Command>
-    </PostBuildEvent>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>$(CudaArchitecture)</CodeGeneration>
