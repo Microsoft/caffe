@@ -46,7 +46,7 @@ static vector<shared_ptr<Solver<float> > > solvers_;
 static vector<shared_ptr<Net<float> > > nets_;
 // init_key is generated at the beginning and everytime you call reset
 
-// static double init_key = static_cast<double>(caffe_rng_rand());  
+// static double init_key = static_cast<double>(caffe_rng_rand());
 // it leads MATLAB 2015a no response
 static double init_key = -2;
 
