@@ -10,4 +10,3 @@ copy /y "%SOLUTION_DIR%..\matlab\+caffe\imagenet\*.mat" "%OUTPUT_DIR%matcaffe\+c
 copy /y "%SOLUTION_DIR%..\matlab\demo\*.m" "%OUTPUT_DIR%matcaffe\demo"
 copy /y "%SOLUTION_DIR%..\matlab\hdf5creation\*.m" "%OUTPUT_DIR%matcaffe\hdf5creation"
 move /y "%OUTPUT_DIR%caffe_.*" "%OUTPUT_DIR%matcaffe\+caffe\private"
-copy /y "%OUTPUT_DIR%*.dll" "%OUTPUT_DIR%matcaffe\+caffe\private"
