@@ -43,7 +43,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalDependencies>libcaffe.lib;$(CudaDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcaffe.lib;libmx.lib;libmex.lib;libmat.lib;$(CudaDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup>
@@ -51,13 +51,13 @@
       <DisableSpecificWarnings>4003</DisableSpecificWarnings>
     </ClCompile>
     <PreBuildEvent>
-      <Command>"$(ScriptsDir)\MatlabPreBuild.cmd" "$(SolutionDir)" "$(ProtocDir)" "$(OutDir)"</Command>
+      <Command>"$(ScriptsDir)\MatlabPreBuild.cmd" "$(SolutionDir)" "$(OutDir)"</Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>"$(ScriptsDir)\MatlabPostBuild.cmd" "$(SolutionDir)" "$(OutDir)"</Command>
     </PostBuildEvent>
     <Link>
-      <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">matcaffe.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>matcaffe.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -74,6 +74,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="matcaffe.def" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -85,6 +86,7 @@
     <Import Project="..\..\..\NugetPackages\boost_filesystem-vc120.1.59.0.0\build\native\boost_filesystem-vc120.targets" Condition="Exists('..\..\..\NugetPackages\boost_filesystem-vc120.1.59.0.0\build\native\boost_filesystem-vc120.targets')" />
     <Import Project="..\..\..\NugetPackages\boost_system-vc120.1.59.0.0\build\native\boost_system-vc120.targets" Condition="Exists('..\..\..\NugetPackages\boost_system-vc120.1.59.0.0\build\native\boost_system-vc120.targets')" />
     <Import Project="..\..\..\NugetPackages\boost_thread-vc120.1.59.0.0\build\native\boost_thread-vc120.targets" Condition="Exists('..\..\..\NugetPackages\boost_thread-vc120.1.59.0.0\build\native\boost_thread-vc120.targets')" />
+    <Import Project="..\..\..\NugetPackages\boost_python2.7-vc120.1.59.0.0\build\native\boost_python-vc120.targets" Condition="Exists('..\..\..\NugetPackages\boost_python2.7-vc120.1.59.0.0\build\native\boost_python-vc120.targets')" />
     <Import Project="..\..\..\NugetPackages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets" Condition="Exists('..\..\..\NugetPackages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets')" />
     <Import Project="..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.targets" Condition="Exists('..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.targets')" />
     <Import Project="..\..\..\NugetPackages\glog.0.3.3.0\build\native\glog.targets" Condition="Exists('..\..\..\NugetPackages\glog.0.3.3.0\build\native\glog.targets')" />
@@ -114,6 +116,7 @@
     <Error Condition="!Exists('..\..\..\NugetPackages\boost_filesystem-vc120.1.59.0.0\build\native\boost_filesystem-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\boost_filesystem-vc120.1.59.0.0\build\native\boost_filesystem-vc120.targets'))" />
     <Error Condition="!Exists('..\..\..\NugetPackages\boost_system-vc120.1.59.0.0\build\native\boost_system-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\boost_system-vc120.1.59.0.0\build\native\boost_system-vc120.targets'))" />
     <Error Condition="!Exists('..\..\..\NugetPackages\boost_thread-vc120.1.59.0.0\build\native\boost_thread-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\boost_thread-vc120.1.59.0.0\build\native\boost_thread-vc120.targets'))" />
+    <Error Condition="!Exists('..\..\..\NugetPackages\boost_python2.7-vc120.1.59.0.0\build\native\boost_python-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\boost_python2.7-vc120.1.59.0.0\build\native\boost_python-vc120.targets'))" />
     <Error Condition="!Exists('..\..\..\NugetPackages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\protobuf-v120.2.6.1\build\native\protobuf-v120.targets'))" />
     <Error Condition="!Exists('..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.props'))" />
     <Error Condition="!Exists('..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\NugetPackages\gflags.2.1.2.1\build\native\gflags.targets'))" />

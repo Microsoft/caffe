@@ -1,5 +1,5 @@
 set SOLUTION_DIR=%~1%
-set OUTPUT_DIR=%~3%
+set OUTPUT_DIR=%~2%
 
 echo MatlabPreBuild.cmd : Create output directories for matlab scripts.
 
