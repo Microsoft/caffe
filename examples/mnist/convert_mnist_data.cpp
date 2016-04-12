@@ -19,6 +19,9 @@
 #if defined(_MSC_VER)
 #include <direct.h>
 #define mkdir(X, Y) _mkdir(X)
+#define LMDB_MAP_SIZE 10000000
+#else
+#define LMDB_MAP_SIZE  1099511627776
 #endif
 
 #include <stdint.h>
@@ -98,7 +101,7 @@ void convert_dataset(const char* image_filename, const char* label_filename,
     CHECK_EQ(mkdir(db_path, 0744), 0)
         << "mkdir " << db_path << "failed";
     CHECK_EQ(mdb_env_create(&mdb_env), MDB_SUCCESS) << "mdb_env_create failed";
-    CHECK_EQ(mdb_env_set_mapsize(mdb_env, 1099511627776), MDB_SUCCESS)  // 1TB
+    CHECK_EQ(mdb_env_set_mapsize(mdb_env,LMDB_MAP_SIZE), MDB_SUCCESS)  // 1TB
         << "mdb_env_set_mapsize failed";
     CHECK_EQ(mdb_env_open(mdb_env, db_path, 0, 0664), MDB_SUCCESS)
         << "mdb_env_open failed";
