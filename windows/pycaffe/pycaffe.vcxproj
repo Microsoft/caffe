@@ -49,6 +49,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <DisableSpecificWarnings>4003</DisableSpecificWarnings>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NDEBUG;%(PreprocessorDefinitions);CAFFE_VERSION=1.0.0-rc3</PreprocessorDefinitions>
     </ClCompile>
     <PreBuildEvent>
       <Command>"$(ScriptsDir)\PythonPreBuild.cmd" "$(SolutionDir)" "$(ProtocDir)" "$(OutDir)"</Command>
