@@ -90,6 +90,7 @@
     <ClCompile Include="..\..\src\caffe\test\test_data_transformer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_db.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_deconvolution_layer.cpp" />
+    <ClCompile Include="..\..\src\caffe\test\test_detectnet_transform.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_dummy_data_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_eltwise_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_embed_layer.cpp" />

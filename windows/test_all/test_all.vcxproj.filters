@@ -215,6 +215,9 @@
     <ClCompile Include="..\..\src\caffe\test\test_scale_layer.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\caffe\test\test_detectnet_transform.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\caffe\test\test_caffe_main.hpp">
@@ -226,10 +229,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <CudaCompile Include="..\..\src\caffe\test\test_im2col_kernel.cu">
-      <Filter>cu</Filter>
-    </CudaCompile>
   </ItemGroup>
 </Project>

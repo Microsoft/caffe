@@ -61,7 +61,7 @@
     </CudaCompile>
     <ClCompile>
       <DisableSpecificWarnings>4661;4005;4812;4715;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src\;$(ProjectDir)\..\..\3rdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
@@ -84,7 +84,7 @@
     </CudaCompile>
     <ClCompile>
       <DisableSpecificWarnings>4661;4005;4812;4715;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src\;$(ProjectDir)\..\..\3rdparty\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
@@ -190,6 +190,7 @@
     <ClCompile Include="..\..\src\caffe\util\db_leveldb.cpp" />
     <ClCompile Include="..\..\src\caffe\util\db_lmdb.cpp" />
     <ClCompile Include="..\..\src\caffe\util\detectnet_coverage_rectangular.cpp" />
+    <ClCompile Include="..\..\src\caffe\util\gpu_memory.cpp" />
     <ClCompile Include="..\..\src\caffe\util\hdf5.cpp" />
     <ClCompile Include="..\..\src\caffe\util\im2col.cpp" />
     <ClCompile Include="..\..\src\caffe\util\insert_splits.cpp" />
@@ -295,6 +296,7 @@
     <ClInclude Include="..\..\include\caffe\util\db_lmdb.hpp" />
     <ClInclude Include="..\..\include\caffe\util\detectnet_coverage.hpp" />
     <ClInclude Include="..\..\include\caffe\util\device_alternate.hpp" />
+    <ClInclude Include="..\..\include\caffe\util\gpu_memory.hpp" />
     <ClInclude Include="..\..\include\caffe\util\hdf5.hpp" />
     <ClInclude Include="..\..\include\caffe\util\im2col.hpp" />
     <ClInclude Include="..\..\include\caffe\util\insert_splits.hpp" />
@@ -325,6 +327,7 @@
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_softmax_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\cudnn_tanh_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\deconv_layer.cu" />
+    <CudaCompile Include="..\..\src\caffe\layers\detectnet_transform_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\dropout_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\eltwise_layer.cu" />
     <CudaCompile Include="..\..\src\caffe\layers\elu_layer.cu" />
