@@ -52,7 +52,7 @@
     <PropertyGroup Condition="'$(MatlabSupport)'=='true'">
         <MatlabDir>C:\Program Files\MATLAB\R2014b</MatlabDir>
         <LibraryPath>$(MatlabDir)\extern\lib\win64\microsoft;$(LibraryPath)</LibraryPath>
-        <IncludePath>$(MatlabDir)\extern\include;$(IncludePath)</IncludePath>
+        <IncludePath>$(MatlabDir)\extern\include;$(MatlabDir)\toolbox\distcomp\gpu\extern\include;$(IncludePath)</IncludePath>
     </PropertyGroup>
     <ItemDefinitionGroup Condition="'$(CpuOnlyBuild)'=='true'">
         <ClCompile>
