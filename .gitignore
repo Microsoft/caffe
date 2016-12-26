@@ -73,6 +73,7 @@ models/*
 
 # build, distribute, and bins (+ python proto bindings)
 build
+windows/packages
 .build_debug/*
 .build_release/*
 distribute/*
@@ -97,7 +98,17 @@ LOG*
 CURRENT
 MANIFEST-*
 
+
 # temporary directories
 jobs
 temp
 examples/*/*lmdb
+
+#Visual Studio files
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.pdb
+*.props
+
