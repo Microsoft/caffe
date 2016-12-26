@@ -47,6 +47,9 @@
 # PyCharm files
 .idea
 
+# Visual Studio Code files
+.vscode
+
 # OSX dir files
 .DS_Store
 
@@ -95,6 +98,12 @@ LOG*
 CURRENT
 MANIFEST-*
 
+
+# temporary directories
+jobs
+temp
+examples/*/*lmdb
+
 #Visual Studio files
 *.user
 *.suo
@@ -102,3 +111,4 @@ MANIFEST-*
 *.opensdf
 *.pdb
 *.props
+
