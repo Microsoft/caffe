@@ -117,8 +117,11 @@ void ScaleLayer<Dtype>::Forward_cpu(
     // Note that this is only necessary for Backward; we could skip this if not
     // doing Backward, but Caffe currently provides no way of knowing whether
     // we'll need to do Backward at the time of the Forward call.
-    caffe_copy(bottom[0]->count(), bottom[0]->cpu_data(),
-               temp_.mutable_cpu_data());
+    const bool scale_param = (bottom.size() == 1);
+    if (!scale_param || (scale_param && this->param_propagate_down_[0])) {
+      caffe_copy(bottom[0]->count(), bottom[0]->cpu_data(),
+                temp_.mutable_cpu_data());
+    }
   }
   const Dtype* scale_data =
       ((bottom.size() > 1) ? bottom[1] : this->blobs_[0].get())->cpu_data();
